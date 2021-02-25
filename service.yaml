@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: devops-exercise-app-svc
+spec:
+  selector:
+    app: flaskApp
+  ports:
+    - port: 5000
+      targetPort: 5000
+  type: LoadBalancer

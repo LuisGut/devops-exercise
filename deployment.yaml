@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-exercise-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flaskApp
+  template:
+    metadata:
+      labels:
+        app: flaskApp
+    spec:
+      containers:
+      - name: demo-app
+        image: luisguth/devops-exercise:v1
+        imagePullPolicy: Always
+        ports:
+        - name: http
+          containerPort: 5000 
